@@ -1,13 +1,14 @@
+
 pipeline {
     agent any
 
     stages {
-        stage('Build & Test') {
-            steps {
-                sh 'pip install pytest'
-                sh 'pytest test_backup.py'
-            }
-        }
+      stage('Build & Test') {
+    steps {
+        sh 'python3 -m pip install pytest'
+        sh 'python3 -m pytest test_backup.py'
+    }
+}
 
         stage('Deploy') {
             steps {
